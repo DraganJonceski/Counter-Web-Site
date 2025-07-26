@@ -118,6 +118,11 @@
       document.body.classList.toggle('dark');
       const isDark = document.body.classList.contains('dark');
       localStorage.setItem('darkMode', isDark ? 'on' : 'off');
+
+      const toggleBtn = document.querySelector('.dark-toggle');
+      toggleBtn.style.display = 'none';
+      void toggleBtn.offsetWidth; // trigger reflow
+      toggleBtn.style.display = '';
     }
 
     // Load saved preference
